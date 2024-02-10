@@ -8,7 +8,8 @@
 body{
     background: #080808;
     color: #fff; 
-    font-size: 20px;
+    width: 100%;
+    font-size: 20px;    
 }
 
 
@@ -82,9 +83,7 @@ nav ul li a::after{
     content: '';
     width: 0%;
     height: 1px;
-
-    background:rgb(91, 63, 24);
-
+    background: rgb(103, 74, 0);
     position: absolute;
     left: 50%;
     bottom: -2px;
@@ -154,7 +153,9 @@ nav ul li a:hover{
     color: rgb(255, 255, 255);
 }
 
-
+.tab-titles p{
+    margin: 0px 5px;
+}
 
 .tab-titles{
     display: flex;
@@ -372,17 +373,25 @@ nav ul li a:hover{
 /* ----------------------------CONTACT------------------ */
 
 
+#contact{
+    width: 100%;
+}
+
 #contact .container{
     background: #101010;
     padding-top: 5vh ;
+    width: 100%;
 }
 
 .contact-left {
     flex-basis: 35%;
+    flex-grow: 1;
 }
 
 .contact-right {
+    flex-grow: 1;
     flex-basis: 60%;
+    
     
 }
 
@@ -466,28 +475,116 @@ form .btn2 {
 
 /*------------------------------ css for small screen -----------------------------------  */
 
+nav .fas{
+    display: none;
+}
+
 @media only screen and (max-width: 600px){
 
     #header {
-        /* background-image: url(images/bull\ all\ stars.png); */
         background-position: right;
         background-size: cover;
-        padding-top: 0px;    
+        padding-top: 0px;
+        min-height: 0vh;
+    }
+    
+    #header .container nav p {
+        font-size: 40px;
+        margin-top: 10px;
     }
 
     #header .container {
+        padding: 0px 20px;
+    }
+
+    #header .container nav p span {
+        font-size: 50px;
+    }
+
+    #header .container {
+        min-height: 90px;
+        height: 90px;
         text-align: center;
-        margin-bottom: 200px;
         overflow-y: visible;
         border-radius: 0px;
         margin: 0px;
         margin-top: 0px;
+
     }
 
-    #header .container nav ul{
+    nav .fas{
+        display: block;
+        font-size: 25px;
+    }
+    
+
+    #header .container nav{
+        justify-content: space-between;
+        padding: 0px;
+    }
+    
+    #header .container nav ul li{
+        display: block;
+        margin: 15px;
+        margin-left: 20px;
+    }
+
+    .header-text{
         display: flex;
-        flex-wrap: wrap;
-        justify-content: center;
+        align-items: center;
+        height: 75vh;
+    }
+
+    .head-container {
+        padding-top: 100px ;
+    }
+
+    .header-text h1 {
+        font-size: 25px;
+        font-weight: 400;
+    }
+    
+    .header-text p {
+        font-size: 15px;
+        font-weight: 200;
+    }
+    
+    .header-text span {
+        font-weight: 600;
+        font-size: 30px ;
+    }
+
+    nav ul {
+        background-color: rgb(103, 74, 0);
+        position: fixed;
+        top: 0;
+        right: -150px;
+        width: 150px;
+        height: 100vh;
+        padding-top: 60px;
+        text-align: left;
+        z-index: 2;
+        transition: 0.5s;
+    }
+
+    nav ul li a::after{
+        background: rgb(211, 211, 211);
+    }
+    
+    nav ul .fas {
+        position: absolute;
+        top: 25px;
+        left: 15px;
+        cursor: pointer;
+        transition: .2s;
+    }
+    
+    nav .fas {
+        cursor: pointer;
+    } 
+
+    nav ul .fas:hover{
+        font-size: 30px;
     }
 
 }

@@ -6,7 +6,7 @@
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <title>Yusuf's Portfolio</title>
-        <link rel="stylesheet" href="style.css?v=1">
+        <link rel="stylesheet" href="style.css?v=2">
         <script src="https://kit.fontawesome.com/42668f5e64.js" crossorigin="anonymous"></script>
     </head>
    
@@ -16,18 +16,22 @@
                 <div class="container">
                     <nav>
                         <p><span>Y</span>usuf <span>.</span>A</p>
-                        <ul>
+                        <ul id="sidemenu">
                             <li><a href="#">Home</a></li>
                             <li><a href="#">About</a></li>
                             <li><a href="#">Services</a></li>
                             <li><a href="#">Portfolio</a></li>
                             <li><a href="#">Contact</a></li>
+                            <i class="fas fa-solid fa-xmark" onclick="closemenu()"></i>
                         </ul>
+                        <i class="fas fa-solid fa-bars" onclick="openmenu()"></i>
                     </nav>
                 </div>
                 <div class="header-text">
-                    <p>UI/UX Designer & 3D Artist</p>
-                    <h1>Hi, I'm <span>Yusuf</span><br> Ahmad from USA</h1>
+                    <div class="head-container">
+                        <p>UI/UX Designer & 3D Artist</p>
+                        <h1>Hi, I'm <span>Yusuf</span><br> Ahmad from USA</h1>
+                    </div>
                 </div>
         </div>
 
@@ -199,20 +203,21 @@
                 for(tabcontent of tabcontents){
                 tabcontent.classList.remove("active-tab");
                 }
-                event.currentTarget.classList.add("active-link");
-                document.getElementById(tabname).classList.add("active-tab");
+            event.currentTarget.classList.add("active-link");
+            document.getElementById(tabname).classList.add("active-tab");
             }
-        </script>
+            var side_menu = document.getElementById("sidemenu");
+            
+            function openmenu(){
+                side_menu.style.right = "0px";
+            }
+            
+            function closemenu(){
+                side_menu.style.right = "-150px";
+            }
 
-        <script>
-                var image = document.getElementById("header");
-                var imageLeft = 0;
-                function move(){
-                    imageLeft++;
-                    image.style.left = imageLeft + "px";
 
-                }
-                setInterval(move, 0);
+            
         </script>
     </body>
 </html>
