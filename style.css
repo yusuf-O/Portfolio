@@ -24,16 +24,17 @@ h1 {
 }
 
 #header{
+    box-shadow: 0px 0px 20px black inset;
     width: 100%;
     min-height: 100vh;
     background-image: url("images/forest night.png");
     background-size: cover;
+    background-repeat: no-repeat;
     background-position: right;
+    padding-top: 5px;
     
 }
-
 #header .container{
-    transform: translateY(5%);
     margin: 0px 2vw;
     background-color: rgba(14, 11, 9, 0.8);
     border-radius: 400px;
@@ -42,13 +43,13 @@ h1 {
 
 #header .container:hover{
     background-color: rgb(14, 11, 9);
-    margin: 0px 0vw;
+    /* margin: 0px 0vw;                         caused issues for certain sizes */ 
 }
 
 nav{
     display: flex;
     align-items: center;
-    justify-content: space-evenly;
+    justify-content: space-between;
     flex-wrap: wrap;
 }
 
@@ -138,7 +139,7 @@ nav ul li a:hover{
     width: 100%;
     border-radius: 10px;                    
     background:rgb(255, 255, 255);                     /* to remove when imge put*/  
-    padding: 80px 0px;                                   /*to remove when imge put*/
+    /* padding: 80px 0px;                                   to remove when imge put */
 }
 
 .about-col-2 {
@@ -460,4 +461,33 @@ form .btn2 {
     font-size: 10px;
     vertical-align: text-top;
     text-align: left;
+}
+
+
+/*------------------------------ css for small screen -----------------------------------  */
+
+@media only screen and (max-width: 600px){
+
+    #header {
+        /* background-image: url(images/bull\ all\ stars.png); */
+        background-position: right;
+        background-size: cover;
+        padding-top: 0px;    
+    }
+
+    #header .container {
+        text-align: center;
+        margin-bottom: 200px;
+        overflow-y: visible;
+        border-radius: 0px;
+        margin: 0px;
+        margin-top: 0px;
+    }
+
+    #header .container nav ul{
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+
 }

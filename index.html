@@ -204,5 +204,15 @@
             }
         </script>
 
+        <script>
+                var image = document.getElementById("header");
+                var imageLeft = 0;
+                function move(){
+                    imageLeft++;
+                    image.style.left = imageLeft + "px";
+
+                }
+                setInterval(move, 0);
+        </script>
     </body>
 </html>
