@@ -5,6 +5,10 @@
     box-sizing: border-box;
 }
 
+html{
+    scroll-behavior: smooth;
+}
+
 body{
     background: #080808;
     color: #fff; 
@@ -36,6 +40,7 @@ h1 {
     
 }
 #header .container{
+    top: 0;
     margin: 0px 2vw;
     background-color: rgba(14, 11, 9, 0.8);
     border-radius: 400px;
@@ -472,12 +477,22 @@ form .btn2 {
     text-align: left;
 }
 
-
-/*------------------------------ css for small screen -----------------------------------  */
+#msg {
+    color: #9aff88;
+    font-size: 13px;
+    margin-top: -40px;
+    display: block;
+    font-weight: 200;
+}
 
 nav .fas{
     display: none;
 }
+
+
+/*------------------------------ css for small screen -----------------------------------  */
+
+
 
 @media only screen and (max-width: 600px){
 
@@ -495,6 +510,10 @@ nav .fas{
 
     #header .container {
         padding: 0px 20px;
+    }
+
+    #header .container:hover {
+        background: rgba(14, 11, 9, 0.8);
     }
 
     #header .container nav p span {
@@ -581,10 +600,12 @@ nav .fas{
     
     nav .fas {
         cursor: pointer;
+        transition: .2s;
     } 
 
-    nav ul .fas:hover{
+    nav .fas:hover{
         font-size: 30px;
+        color: #ffae00; 
     }
 
 }
